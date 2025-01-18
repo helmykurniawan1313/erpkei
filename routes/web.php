@@ -23,13 +23,15 @@ use App\Http\Controllers\DashboardProjectController;
 use App\Http\Controllers\DashboardMainController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SettingController;
-
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DivisionController;
 
 use App\Http\Controllers\DashboardIncomeController;
 use App\Http\Controllers\IncomeCategoryController;
 use App\Http\Controllers\DashboardExpensesController;
 use App\Http\Controllers\EmployeeDebtController;
 use App\Http\Controllers\ExpansesCategoryController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -131,3 +133,17 @@ Route::get('/dashboard/employeedebt/{performer_id}/paydebt',  [EmployeeDebtContr
 Route::delete('/dashboard/employeedebt/{id}/del',  [EmployeeDebtController::class, 'deletedebt'])->middleware('auth');
 Route::put('/dashboard/employeedebt/{id}/edit', [EmployeeDebtController::class, 'update'])->middleware('auth');
 Route::resource('/dashboard/main', DashboardMainController::class)->middleware('auth');
+Route::resource('/dashboard/departments', DepartmentController::class)->except('show')->middleware('auth');
+Route::resource('/dashboard/divisions', DivisionController::class)->except('show')->middleware('auth');
+Route::resource('/dashboard/users', UserController::class)->except('show')->middleware('auth');
+// web.php (or api.php if using API routes)
+
+Route::get('/getDivisions/{departmentId}', [App\Http\Controllers\UserController::class, 'getDivisions']);
+
+
+
+
+
+
+Route::post('/check-email', [UserController::class, 'checkEmail'])->name('check.email');
+Route::post('/check-username', [UserController::class, 'checkUsername'])->name('check.username');

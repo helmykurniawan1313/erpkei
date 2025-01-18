@@ -137,10 +137,7 @@
         <script src="/dashboard/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
         <script src="/dashboard/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
 
-        <script type="text/javascript" src="/dashboard/plugins/autocomplete/jquery.mockjax.js"></script>
-        <script type="text/javascript" src="/dashboard/plugins/autocomplete/jquery.autocomplete.min.js"></script>
-        <script type="text/javascript" src="/dashboard/plugins/autocomplete/countries.js"></script>
-        <script type="text/javascript" src="/dashboard/assets/pages/jquery.autocomplete.init.js"></script>
+
 
         <!-- Init Js file -->
         <script type="text/javascript" src="/dashboard/assets/pages/jquery.form-advanced.init.js"></script>

@@ -61,6 +61,17 @@
                         <i class="fi-record"></i> <span> Hutang Karyawan </span>
                     </a>
                 </li>
+                <li>
+                    <a class="nav-link {{ Request::is('dashboard/departments*') ? 'active' : '' }}" href="/dashboard/departments">
+                        <i class="fi-record"></i> <span> Departemen </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{ Request::is('dashboard/divisions*') ? 'active' : '' }}" href="/dashboard/divisions">
+                        <i class="fi-record"></i> <span> Divisi </span>
+                    </a>
+                </li>
+            
             
                 @break
               

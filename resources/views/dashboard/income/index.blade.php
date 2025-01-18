@@ -1,6 +1,7 @@
 @extends('dashboard.layouts.mains')
 
 @section('container')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="content-page">
     <!-- Start content -->
     <div class="content">
@@ -94,7 +95,30 @@
     </div> <!-- content -->
 
 
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.sa-params').on('click', function(e) {
+                e.preventDefault();
+                var formId = $(this).data('form-id');
+                var form = $('#' + formId);
+    
+                Swal.fire({
+                    title: 'Apa Anda Yakin???',
+                    text: "Anda tidak akan bisa mengembalikan data ini jika telah dihapus !!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: 'Batal',
+                    confirmButtonText: 'Iya, Hapus'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    </script>
     
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

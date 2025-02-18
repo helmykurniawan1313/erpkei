@@ -48,10 +48,6 @@
 
 
 
-<script type="text/javascript" src="/dashboard/plugins/autocomplete/jquery.mockjax.js"></script>
-<script type="text/javascript" src="/dashboard/plugins/autocomplete/jquery.autocomplete.min.js"></script>
-<script type="text/javascript" src="/dashboard/plugins/autocomplete/countries.js"></script>
-<script type="text/javascript" src="/dashboard/assets/pages/jquery.autocomplete.init.js"></script>
-       
+
 
 @endsection

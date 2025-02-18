@@ -71,6 +71,11 @@
                         <i class="fi-record"></i> <span> Divisi </span>
                     </a>
                 </li>
+                <li>
+                    <a class="nav-link {{ Request::is('dashboard/users*') ? 'active' : '' }}" href="/dashboard/users">
+                        <i class="fi-record"></i> <span> Pengguna </span>
+                    </a>
+                </li>
             
             
                 @break

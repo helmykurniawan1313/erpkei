@@ -11,23 +11,19 @@ class CreateProductsTable extends Migration
      *
      * @return void
      */
+    // database/migrations/xxxx_xx_xx_create_products_table.php
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
-            $table->text('body');
-            $table->string('link');
+            $table->text('description')->nullable();
+            $table->decimal('price', 10, 2);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('products');

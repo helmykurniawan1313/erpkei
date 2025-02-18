@@ -32,6 +32,9 @@ use App\Http\Controllers\DashboardExpensesController;
 use App\Http\Controllers\EmployeeDebtController;
 use App\Http\Controllers\ExpansesCategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Dummy;
+
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -141,9 +144,26 @@ Route::resource('/dashboard/users', UserController::class)->except('show')->midd
 Route::get('/getDivisions/{departmentId}', [App\Http\Controllers\UserController::class, 'getDivisions']);
 
 
+Route::resource('/dashboard/dummys', Dummy::class)->except('show')->middleware('auth');
 
+
+Route::resource('/dashboard/orders', OrderController::class)->except('show')->middleware('auth');
+
+
+Route::get('/dummys/create', [Dummy::class, 'create']);
+Route::post('/dummys', [Dummy::class, 'store']);
 
 
 
 Route::post('/check-email', [UserController::class, 'checkEmail'])->name('check.email');
 Route::post('/check-username', [UserController::class, 'checkUsername'])->name('check.username');
+
+
+Route::get('/get-product-price/{id}', [OrderController::class, 'getProductPrice']);
+
+Route::post('/check-so-number', [OrderController::class, 'checkSoNumber'])->name('check.so_number');
+
+Route::post('/add-product', [OrderController::class, 'addProduct'])->name('add.product');
+
+Route::post('/check-product-code', [OrderController::class, 'checkProductCode'])->name('check.product.code');
+Route::get('/get-products', [OrderController::class, 'getProducts'])->name('get.products');

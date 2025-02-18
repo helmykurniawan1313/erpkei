@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
-    protected $table = "company";
+    protected $table = "companies";
     protected $guarded = ['id'];
 
     public function cashflow_company()
